@@ -1,0 +1,41 @@
+@import "variables";
+@import "mixins";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+//i am a comment
+// this is a single line comment
+// Below are the concepts of SASS or SCSS
+// 1. Variables
+// 2. Operators
+// 3. Nesting of Styles
+// 4. Mixin
+// 5. Mixin with parameters
+// 6. Single line comment
+// 7. Partials and import
+
+.main-container{
+    @include display-center;
+    width: 100vw;
+    height: 100vh;
+    background-color: $bg-color; /*Variable usage*/
+
+    h2{/*Nesting*/
+        @include text-styling(uppercase, 0.9rem);
+        &:hover{/*Nesting*/
+            color:rgb(94, 8, 19);
+        }
+        &::before{
+            content: "Your are ";
+        }
+    }
+
+    p{/*Nesting*/
+        @include text-styling(capitalize, 1.5rem);
+    }
+}
+
+
